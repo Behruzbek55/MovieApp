@@ -30,7 +30,15 @@ class EditMovie : AppCompatActivity() {
             about.setText(MovieList.movieList[position].about)
             date.setText(MovieList.movieList[position].date)
 
+            btn.setOnClickListener {
+                MovieList.movieList[position].name=name.text.toString()
+                MovieList.movieList[position].authors=authors.text.toString()
+                MovieList.movieList[position].about=about.text.toString()
+                MovieList.movieList[position].date=date.text.toString()
 
+                MySharedPrefarance.obektString=MovieList.movieList
+                finish()
+            }
         }
     }
 }
